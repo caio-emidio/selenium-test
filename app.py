@@ -7,9 +7,9 @@ driver = webdriver.Firefox()
 #Access amazon.com
 driver.get("http://www.amazon.com")
 
-#Search of Canon
+#Search of Nikon
 search = driver.find_element_by_id("twotabsearchtextbox")
-search.send_keys('Canon')
+search.send_keys('Nikon')
 search.send_keys(Keys.RETURN)
 
 driver.implicitly_wait(20)
