@@ -38,6 +38,6 @@ list_of_products[1].click()
 #Verify Product Title
 product_title = browser.find_element_by_xpath('//span[@id="productTitle"]')
 print(product_title.text)
-assert  assert_element in product_title.text, assert_element + " not in Search."
-
+assert  assert_element in product_title.text, "FAIL: " + assert_element + " not in Search."
+print("SUCCESS: " + assert_element + " in Search")
 browser.close()
