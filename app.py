@@ -7,8 +7,12 @@ baseURL = "http://www.amazon.com"
 baseSearch = "Nikon"
 assert_element = "Nikon D3X"
 
+#Chrome Path
+chrome_path = '/usr/bin/google-chrome'
+
+
 #Start Browser
-browser = webdriver.Chrome()
+browser = webdriver.Chrome(executable_path=chrome_path)
 wait = WebDriverWait(browser, 10)
 
 #Open Amazon
@@ -34,6 +38,6 @@ list_of_products[1].click()
 #Verify Product Title
 product_title = browser.find_element_by_xpath('//span[@id="productTitle"]')
 print(product_title.text)
-assert  assert_element in product_title.text
+assert  assert_element in product_title.text, assert_element + " not in Search."
 
 browser.close()
